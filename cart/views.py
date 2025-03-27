@@ -24,8 +24,11 @@ def cart_add(request):
 
         
         cart.add(product=product, product_qty = product_quantity)
+
+        cart_quantity = cart.__len__()
+
         
-        response = JsonResponse({'qty': product_quantity})
+        response = JsonResponse({'qty': cart_quantity})
 
         return response
 
