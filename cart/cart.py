@@ -32,3 +32,8 @@ class Cart():
         self.session.modified = True
 
         
+    # new function and to render in template, so afte refresh page, cart qty num remain
+
+    def __len__(self):
+
+        return sum(item['qty'] for item in self.cart.values())
