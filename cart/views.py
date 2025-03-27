@@ -25,7 +25,7 @@ def cart_add(request):
         
         cart.add(product=product, product_qty = product_quantity)
         
-        response = JsonResponse({'The product is called: ': product.title, 'And the product quantity is : ': product_quantity})
+        response = JsonResponse({'qty': product_quantity})
 
         return response
 
