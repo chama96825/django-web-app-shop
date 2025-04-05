@@ -48,6 +48,17 @@ class Cart():
 
         self.session.modified = True
 
+    def update(self, product, qty):
+
+        product_id = str(product)
+
+        product_quantity = qty
+
+        if product_id in self.cart:
+            
+            self.cart[product_id]['qty'] = product_quantity
+
+        self.session.modified = True
     
     
     # new function and to render in template, so afte refresh page, cart qty num remain
