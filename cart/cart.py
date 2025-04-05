@@ -74,8 +74,12 @@ class Cart():
         all_product_ids = self.cart.keys()
 
         products = Product.objects.filter(id__in=all_product_ids)
+        
+        import copy
+        
+        cart = copy.deepcopy(self.cart)
 
-        cart = self.cart.copy()
+        #cart = self.cart.copy()
 
         for product in products:
 
